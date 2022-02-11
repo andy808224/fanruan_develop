@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
+    <id>com.fr.solution.theme.sky</id>
+    <name><![CDATA[西北院自定义主题]]></name>
+    <active>yes</active>
+    <version>1.89</version>
+    <env-version>8.0</env-version>
+    <jartime>2016-08-05</jartime>
+    <vendor>steven.zhao</vendor>
+    <description><![CDATA[西北院自定义主题]]></description>
+    <change-notes><![CDATA[<ul>
+		<li>1自定义主题（海联）</li>
+        </ul>
+    ]]></change-notes>
+    <extra-core>
+        <LocaleFinder class="com.fr.solution.theme.sky.LocaleFinder"/>
+    </extra-core>
+    <extra-designer>
+    </extra-designer>
+    <extra-platform>
+        <ThemeVariousProvider class="com.fr.solution.theme.sky.ThemeSky"/>
+    </extra-platform>
+</plugin>
