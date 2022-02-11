@@ -1,0 +1,70 @@
+
+apply plugin: 'java'
+
+/**
+ * 可以修改这个变量以依赖不同的开发版本
+ */
+def fineVersion = '10.0-RELEASE-SNAPSHOT'
+
+group = 'com.fr.plugin'
+version = '10.0'
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('http://mvn.finedevelop.com/repository/maven-public/')
+    }
+
+    maven {
+        url = uri('http://repo.maven.apache.org/maven2')
+    }
+}
+
+task install(type: Copy) {
+    into "webroot/WEB-INF/lib"
+    from configurations.runtimeClasspath
+}
+
+static def isWindows() {
+    return org.gradle.internal.os.OperatingSystem.current().isWindows()
+}
+
+allprojects {
+
+    apply plugin: 'java'
+
+    dependencies {
+        implementation 'com.fr.third:fine-third:' + fineVersion
+        implementation 'com.fr.activator:fine-activator:' + fineVersion
+        implementation 'com.fr.core:fine-core:' + fineVersion
+        implementation 'com.fr.webui:fine-webui:' + fineVersion
+        implementation 'com.fr.datasource:fine-datasource:' + fineVersion
+        implementation 'com.fr.decision:fine-decision:' + fineVersion
+        implementation 'com.fr.decision:fine-decision-report:' + fineVersion
+        implementation 'com.fr.schedule:fine-schedule:' + fineVersion
+        implementation 'com.fr.schedule:fine-schedule-report:' + fineVersion
+        implementation 'com.fr.intelligence:fine-swift:' + fineVersion
+        implementation 'com.fr.intelligence:fine-accumulator:' + fineVersion
+        implementation 'com.fr.report:fine-report-engine:' + fineVersion
+        implementation 'com.fr.report:fine-report-designer:' + fineVersion
+        implementation 'io.socket:socket.io-client:0.7.0'
+        implementation 'org.aspectj:aspectjrt:1.6.9'
+        implementation 'org.swingexplorer:swexpl:2.0'
+        implementation 'org.swingexplorer:swag:1.0'
+        implementation 'org.apache.tomcat:tomcat-catalina:8.5.32'
+        implementation 'org.apache.tomcat:tomcat-jasper:8.5.32'
+        implementation 'mysql:mysql-connector-java:5.1.44'
+        implementation 'com.fr.third:jxbrowser:6.23.1'
+        implementation group:"com.fr.third", name: isWindows() ? "jxbrowser-win64" :"jxbrowser-mac",version:"6.23.1"
+        implementation 'org.slf4j:slf4j-api:1.7.30'
+        implementation 'org.slf4j:slf4j-simple:1.7.30'
+        testImplementation 'junit:junit:4.12'
+        testImplementation 'org.easymock:easymock:3.5.1'
+    }
+
+}
+
+dependencies {
+    implementation files("${System.getProperty('java.home')}/../lib/tools.jar")
+}
+sourceCompatibility = '1.8'

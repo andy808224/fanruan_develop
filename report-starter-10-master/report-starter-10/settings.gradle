@@ -1,0 +1,5 @@
+rootProject.name = 'starter'
+include(':plugin-function')
+include(':plugin-function2')
+
+include(':plugin-hello-world')

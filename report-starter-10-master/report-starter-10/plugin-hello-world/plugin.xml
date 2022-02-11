@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin>
+    <id>com.fr.plugin.demo.chart</id>
+    <main-package>com.fr.plugin.demo</main-package>
+    <name><![CDATA[DEMO图表]]></name>
+    <active>yes</active>
+    <version>1.0.0</version>
+    <env-version>10.0</env-version>
+    <jartime>2018-3-31</jartime>
+    <vendor>finereport.shine</vendor>
+    <description><![CDATA[给开发者参考的图表插件demo]]></description>
+    <change-notes><![CDATA[]]></change-notes>
+
+    <extra-chart>
+        <IndependentChartProvider class="com.fr.plugin.demo.Demo" plotID="DEMO_CHART"/>
+    </extra-chart>
+
+    <extra-chart-designer>
+        <IndependentChartUIProvider class="com.fr.plugin.demo.DemoUI" plotID="DEMO_CHART"/>
+    </extra-chart-designer>
+
+    <function-recorder class="com.fr.plugin.demo.fun.DemoChart"/>
+</plugin>
