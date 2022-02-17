@@ -1,6 +1,6 @@
 demoWrapper = ExtendedChart.extend({
 
-    _init: function (dom, option) {
+    _init: function (dom, option) {  //图表初始化
         var chart = echarts.init(dom);
         //绑定点击触发超链函数
         chart.on('click', this.getLinkFun());

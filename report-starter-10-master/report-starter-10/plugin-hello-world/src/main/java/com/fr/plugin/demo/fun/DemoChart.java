@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by shine on 2018/3/24.
+ * 后台图表对象
  */
 @EnableMetrics
 public class DemoChart extends AbstractChart<DemoDataConfig> {

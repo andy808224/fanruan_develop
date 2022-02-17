@@ -67,9 +67,9 @@ public class DemoDataConfig extends AbstractDataConfig {
         this.actual = actual;
     }
 
-    @Override
+    @Override  //读取数据库中数据并渲染到模板对象上，在浏览器上进行展示
     protected void readAttr(XMLableReader reader) {
-        readExtendedField(x, "x", reader);
+        readExtendedField(x, "x", reader); //第二个参数是字段写入模板对应的key
         this.setTargetName(reader.getAttrAsString("targetName", ""));
         readExtendedField(y, "y", reader);
         readExtendedField(z, "z", reader);
@@ -79,7 +79,7 @@ public class DemoDataConfig extends AbstractDataConfig {
 
     @Override
     protected void writeAttr(XMLPrintWriter writer) {
-        writeExtendedField(x, "x", writer);
+        writeExtendedField(x, "x", writer);  //第二个参数是字段写入模板对应的key
         writer.attr("targetName", this.getTargetName());
         writeExtendedField(y, "y", writer);
         writeExtendedField(z, "z", writer);

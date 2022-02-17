@@ -19,5 +19,6 @@
         <IndependentChartUIProvider class="com.fr.plugin.demo.DemoUI" plotID="DEMO_CHART"/>
     </extra-chart-designer>
 
+
     <function-recorder class="com.fr.plugin.demo.fun.DemoChart"/>
 </plugin>
